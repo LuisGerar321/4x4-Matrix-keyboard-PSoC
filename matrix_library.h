@@ -33,16 +33,20 @@ int c_length=0;
 \*****************************************************************************/
 
 /*****************************************************************************\
- * Function:    MatrixCheckLoop(void)
- * Input:       void
+ * Function:    MatrixCheckLoop( component, modo)
+ * Input:       component: This option, you need to put the component where the output will be printed ("LCD"/"UART")
+                modo: choose the modality of your physical matrix connection. If it connected in a protoboard? So, use keypad_scan, Nevertheless, if this is connected 
+                in a special proto by UPY's Emb engineers you will need to use keypad_scanUDB
+
  * Returns:     void
  * Description: Use without interruption just to check the functionality of matricial componet!
 
 \*****************************************************************************/
 
 /*****************************************************************************\
- * Function:    key_scanLine(void)
- * Input:       void
+ * Function:    key_scanLine(ENTER, MODO)
+ * Input:       ENTER: it's the final character of the message
+                MODO: it's the modality of your physical matrix connection
  * Returns:     return in keyLine a str when user press enter (#/D/C)
  * Description: Use this function when you need to get a character greater than n digits in matrix.
 
@@ -50,19 +54,27 @@ int c_length=0;
 
 
 void keypad_scan(void){
-    Matrix_Write(0x0F); /* 00001111 */    /* 11110000 */
+    
+    Matrix_Write(0xF0); /* 00001111 */    /* ***** 11110000 */
     //cols = Matrix_Read();
     rows = Matrix_Read();
-    
-    Matrix_Write(0xF0); /* 11110000 */ /* 00001111 */ 
+    //LCD_Position(0,0);
+    //LCD_PrintHexUint16(rows);
+    Matrix_Write(0xF); /* 11110000 */ /* ******00001111 */ 
     //rows = Matrix_Read();
     cols = Matrix_Read();
+    ///////LCD_Position(1,0);
+    ///////LCD_PrintHexUint16(cols);
+    
+    ///////LCD_Position(1,7);
+    //////LCD_PrintHexUint16(rows&cols);
+    
     switch(rows & cols)
     {               /* Binary Numbers */
-        case 0x11: /* 0b00010001 */
+        case 0x15: /* 0b00010001 */
             key = 'D';
             break;
-        case 0x12: /* 0b00010010 */
+        case 0x16: /* 0b00010010 */
             //key = 'C';
             key = '#';
             break;
@@ -70,15 +82,15 @@ void keypad_scan(void){
             //key = 'B';
             key = '0';
             break;
-        case 0x18: /* 0b00011000 */
+        case 0x1C: /* 0b00011000 */
 //            key = 'A';
             key = '*';
             break;
-        case 0x21: /*  */ 
+        case 0x25: /*  */ 
 //            key = '#';
             key = 'C';
             break;
-        case 0x22: 
+        case 0x26: 
 //            key = '9';
             key = '9';
             break;
@@ -86,30 +98,30 @@ void keypad_scan(void){
 //            key = '6';
             key = '8';
             break;
-        case 0x28: 
+        case 0x2C: 
             //key = '3';
             key = '7';
             break;        
-        case 0x41: 
+        case 0x45: 
             //key = '0';
             key = 'B';
             break;  
-        case 0x42: 
+        case 0x46: 
 //            key = '8';
             key = '6';
             break;  
         case 0x44: 
             key = '5';
             break;  
-        case 0x48: 
+        case 0x4C: 
             //key = '2';
             key = '4';
             break;  
-        case 0x81: 
+        case 0x85: 
 //            key = '*';
             key = 'A';
             break;          
-        case 0x82:
+        case 0x86:
 //            key = '7';
             key = '3';
             break;
@@ -117,7 +129,7 @@ void keypad_scan(void){
 //            key = '4';
             key = '2';
             break; 
-        case 0x88:
+        case 0x8C:
             key = '1';
             break;
 
@@ -242,7 +254,7 @@ void key_scanLine(char enter,int length, void (*func)()){
     if(c_length<=length){
         
         if(((key > ' ')|| (c_key > ' ')) && ((key != enter)|| (c_key != enter)) ){
-            strcat(temp,&key); strcat(temp,&c_key);
+            strcat(temp,&key); //strcat(temp,&c_key);
             
         };
         c_length++;
