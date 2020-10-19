@@ -43,10 +43,13 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 ###### Top Design in PSoC Creator
 <br/>
 <img src="ImagesReadme/TopDesign.PNG">
-###### Matrix connection to PSoC 
 <br/>
 
-<img src="ImagesReadme/Connections.png"  witdh = 500, height = 300>
+
+
+###### Matrix connection to PSoC 
+
+<img src="ImagesReadme/Connections.png"  witdh = 900, height = 700>
 <br/>
 
 
