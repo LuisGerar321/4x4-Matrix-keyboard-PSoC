@@ -49,7 +49,7 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 
 ###### Matrix connection to PSoC 
 
-<img src="ImagesReadme/Connections.png"  witdh = 900, height = 700>
+<img src="ImagesReadme/ConnectionsMatrix.png"  witdh = 900, height = 700>
 <br/>
 
 
