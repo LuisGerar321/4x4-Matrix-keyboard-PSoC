@@ -11,7 +11,9 @@ unsigned char rows1=0, cols1=0, key1=0;
 char c_key;
 /*--------------------------------------------------*/
 
-char keyLine[255];
+char keyLine[255]; //Cuando el user press Enter se guarda el String
+char keyLine_temp[255]; //Almacena los datos que va press el user mientras no pressiona enter. Si el usuar press Enter esto se borra!
+char keyLine_Security[255]; //Almacena los datos que va press el user como un asterisco mientras no pressiona enter. Si el usuar press Enter esto se borra!
 char temp[255];
 int c_length=0;
 
@@ -38,17 +40,17 @@ int c_length=0;
                 modo: choose the modality of your physical matrix connection. If it connected in a protoboard? So, use keypad_scan, Nevertheless, if this is connected 
                 in a special proto by UPY's Emb engineers you will need to use keypad_scanUDB
 
- * Returns:     void
+ * Returns:     void because is a loop!  But, it will print in component ("LCD"/"UART") the key pressed!
  * Description: Use without interruption just to check the functionality of matricial componet!
 
 \*****************************************************************************/
 
-/*****************************************************************************\
- * Function:    key_scanLine(ENTER, MODO)
+/*****************************************************************************\ "#"--"\n"
+ * Function:    key_scanLine(ENTER, Longitud maxima, MODO)
  * Input:       ENTER: it's the final character of the message
                 MODO: it's the modality of your physical matrix connection
  * Returns:     return in keyLine a str when user press enter (#/D/C)
- * Description: Use this function when you need to get a character greater than n digits in matrix.
+ * Description: Use this function when you need to get a message from Matrix.
 
 \*****************************************************************************/
 
@@ -63,11 +65,11 @@ void keypad_scan(void){
     Matrix_Write(0xF); /* 11110000 */ /* ******00001111 */ 
     //rows = Matrix_Read();
     cols = Matrix_Read();
-    ///////LCD_Position(1,0);
-    ///////LCD_PrintHexUint16(cols);
+    //LCD_Position(1,0);
+    //LCD_PrintHexUint16(cols);
     
-    ///////LCD_Position(1,7);
-    //////LCD_PrintHexUint16(rows&cols);
+    ///LCD_Position(1,7);
+    ///LCD_PrintHexUint16(rows&cols);
     
     switch(rows & cols)
     {               /* Binary Numbers */
@@ -234,7 +236,6 @@ void MatrixCheckLoop(const char* componet, void (*ptrFunc)()){
             LCD_Position(0,0);
             ptrFunc();
             LCD_PutChar(key);
-            
             LCD_Position(1,0);
             LCD_PutChar(c_key);
             
@@ -245,8 +246,9 @@ void MatrixCheckLoop(const char* componet, void (*ptrFunc)()){
 void key_scanLine(char enter,int length, void (*func)()){
     func(); //Puede ser el UDB o el normal.
     if((key ==enter)|| (c_key == enter)){
-        strcpy(keyLine,temp);
-        strcpy(temp,"");
+        strcpy(keyLine,keyLine_temp);
+        strcpy(keyLine_temp,"");
+        strcpy(keyLine_Security,"");
         key=' '; c_key=' ';
         c_length =0;    
     }
@@ -254,10 +256,16 @@ void key_scanLine(char enter,int length, void (*func)()){
     if(c_length<=length){
         
         if(((key > ' ')|| (c_key > ' ')) && ((key != enter)|| (c_key != enter)) ){
-            strcat(temp,&key); //strcat(temp,&c_key);
+            strcat(keyLine_temp,&key); //strcat(keyLine_temp,&c_key);
+            strcat(keyLine_Security,"*");
             
         };
         c_length++;
     }
+}
+
+
+void ClearKeyLine(){
+    strcpy(keyLine,"");
 }
 
