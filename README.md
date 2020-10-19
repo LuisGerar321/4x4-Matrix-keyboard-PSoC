@@ -41,4 +41,4 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 ## Keyboard Matrix conection
 
 ###### Top Design <br/>
-<img src="ImagesReadme/Keyboard.PNG" witdh = 300, height = 200>
+<img src="ImagesReadme/TopDesign.PNG" witdh = 300, height = 200>
