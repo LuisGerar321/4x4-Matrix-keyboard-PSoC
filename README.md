@@ -31,10 +31,11 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 - **Output**: *This is a loop! it will print in the component choosed ("LCD"/"UART") the key pressed everytime!*
 - **Description**: *Use without interruption just to check the functionality of matricial componet!*
 
-###### key_scanLine(ENTER, size , MODO)
-- **Input**: <br/> > ***ENTER***: it's the final character of the message <br/>
-***Size***: The maximun size allowed by digit combination
-***MODO***: it's the mode of your physical matrix connection
+###### key_scanLine(ENTER, SIZE , MODO)
+- **Input**: <br/>
+>***ENTER***: it's the final character of the message <br/>
+>***SIZE***: The maximun size allowed by digit combination <br/>
+>***MODO***: it's the mode of your physical matrix connection <br/>
 - **Output**: it will return in keyLine variable (which is a global var in this library) a string message with the convination when user press Enter (#/D/C)
 - **Description**: Use this function when you need to get a message or digit convination from Matrix.
 
