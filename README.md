@@ -40,8 +40,13 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 
 ## Keyboard Matrix conection
 
-###### Top Design in PSoC Creator <br/>
-<img src="ImagesReadme/TopDesign.PNG">
+###### Top Design in PSoC Creator
 <br/>
-##### Matrix connection to PSoC <br/>
+<img src="ImagesReadme/TopDesign.PNG">
+###### Matrix connection to PSoC 
+<br/>
+
+<img src="ImagesReadme/Connections.png"  witdh = 500, height = 300>
+<br/>
+
 
