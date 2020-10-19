@@ -39,3 +39,6 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 - **Description**: Use this function when you need to get a message or digit convination from Matrix.
 
 ## Keyboard Matrix conection
+
+###### Top Design <br/>
+<img src="ImagesReadme/Keyboard.PNG" witdh = 300, height = 200>
