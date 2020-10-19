@@ -1,10 +1,8 @@
 # Matrix-keyboard-PSoC-5lp
 
-##Brief description
+## Brief description
 This PSoC 5 library allows you to read the matrix keyboard reading just digits ('1', 'A', etc) or a combination of digits  ('1997', 'A10B')
 
-This library is a serie of functions collection to read a simple Matrix Keyboard 4x4. This allows you creating your PSoC projects without taking care about the low logic of reading
-
-the keyboard. In another hand, you just need you take care in programming your project and save time. This code is not a professional library, I wrote that to a schoolar project so,
-if you have another contributions or ideas you are free to extend the library and send me a message to update that.
-
+This library is a summary function to read a simple Matrix Keyboard 4x4. This allows you to create your PSoC projects without taking care of the low programming logic of reading the buttons of the keyboard. 
+On the other hand, you will able to put the focus on your project which is the important thing, and save a little time. This code is not a professional PSoC library because I wrote that while I was doing a scholar project so,
+if you have other contributions or ideas for these functions,  you are free to extend that and send me a message to update this repository.
