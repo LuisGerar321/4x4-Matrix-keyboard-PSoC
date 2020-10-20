@@ -40,6 +40,24 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 - **Output**: it will return in keyLine variable (which is a global var in this library) a string message with the convination when user press Enter (#/D/C)
 - **Description**: Use this function when you need to get a message or digit convination from Matrix.
 
+## Global variables
+
+###### **key**: <br/>
+This global variable store the information read by the matrix keyboard when function  ***keypad_scan()*** is executed
+
+###### **keyUDB**: <br/>
+This global variable store the information read by the matrix keyboard when function  ***keypad_scanUDB()*** is executed
+
+###### **keyLine**: <br/>
+This global variable store the information read by the matrix keyboard when function  ***keypad_scanLine()*** is executing and Enter is pressed (It will be empty until Enter is pressed).
+
+###### **keyLine_temp**: <br/>
+This global variable store the current information read by the matrix keyboard when function  ***keypad_scanLine()*** is executed. This, store characters by character until Enter is not pressed (when this ocurrs  keyLine_temp will be empty).
+
+###### **keyLine_Security**: <br/>
+This global variable store the current information read by the matrix keyboard with speacial character **"*"** when function  ***keypad_scanLine()*** is executed. 
+
+
 ## Keyboard Matrix conection
 
 ###### Top Design in PSoC Creator
