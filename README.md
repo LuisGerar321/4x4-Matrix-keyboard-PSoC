@@ -9,7 +9,7 @@ This library is a summary function to read a simple Matrix Keyboard 4x4. This al
 
 
 
-On the other hand, you will able to put the focus on your own project which is the important thing and just using the functions that i provided you. This code is not a professional PSoC library because I wrote that while I was doing a scholar project so. Nevertheles, it is usefull and help me in another PSoC projects.
+So, using the functions that ***matrix_library.h*** provides, you will able to put the focus on your own project which is the important thing. This code is not a professional PSoC library because I wrote that while I was doing a scholar project so. Nevertheles, it is usefull and help me in another PSoC projects.
 Finally, if you have another contributions or ideas for these functions,  you are free to extend that and send me a message to update this repository.
 
 ## Functions
@@ -22,7 +22,7 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 ###### keypad_scanUDB(void)
 - **Input**:
   *void*
-- **Output**: This function return in 'c_key' variable (wich is a global char variable inside this library) the key pressed on the keyboard e.g. if(c_key=='1'){//someCode}
+- **Output**: This function return in 'keyUDB' variable (wich is a global char variable inside this library) the key pressed on the keyboard e.g. if(keyUDB=='1'){//someCode}
 - **Description**: Use 'keypad_scanUDB' function instead of keypad_scan, if your matrix is connected to UPY Developer Board which have conditioning circuits.
 
 ###### MatrixCheckLoop( component, modo)
@@ -32,7 +32,7 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 - **Output**: *This is a loop! it will print in the component choosed ("LCD"/"UART") the key pressed everytime!*
 - **Description**: *Use without interruption just to check the functionality of matricial componet!*
 
-###### key_scanLine(ENTER, SIZE , MODO)
+###### keypad_scanLine(ENTER, SIZE , MODO)
 - **Inputs**: <br/>
 >***ENTER***: it's the final character of the message <br/>
 >***SIZE***: The maximun size allowed by digit combination <br/>
@@ -56,21 +56,21 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 
 <br/>
 
-## How to implement it on your projects
-The important file in this repository is ***matrix_library.h*** file which contains the necesary functions to use the matrix keyboard 4x4. Including the header in your  PSoc project will able to use the functions with. Furthermore, a PSoC project are added in this repository in case you needed it(***name_example***).
+## How to implement matrix_library.h on your projects
+The important file in this repository is ***matrix_library.h*** file which contains the necessary functions to use the matrix keyboard 4x4. Including the header in your  PSoC project will able to use the functions described above. Furthermore, a PSoC project is added to this repository in case you needed it(***name_example***).
 ###### Download
-To get this library, it will be necessary clonning  the repository or download it in a zip file. Then, seek the header and put it inside of the folder Design.cydsn which is creted when you do a new project whit any name.
+To get this library, it will be necessary to clone the repository or download it in a zip file. Then, seek the header and put it inside of the folder Design.cydsn which is created when you do a new workspace whit any name.
 
 
 ###### Adding ***matrix_library.h***  to your current  PSoC workspace project
 
 <br/>
 
-The following image shows how the ***matrix_library.h*** is stored inside of my PSoC project named ***Design01.cydsn*** which was created when the workspace ***GatoGame*** was created in PSoC creator.
+The following image shows how the ***matrix_library.h*** is stored inside of my PSoC project named ***Design01.cydsn*** which has been created when the workspace ***GatoGame*** was created in PSoC creator.
 
 <br/> <img src="ImagesReadme/HeaderInProject.png" > <br/>
 
-Then, it will be necessary to add the header in PSoC Creator as well just clicking on ***Header files** -> ***Add** -> ***Existing Item*** as is showed in the following picture.
+Then, it will be necessary to add the header in PSoC Creator as well, you can do it just clicking on ***Header files** -> ***Add*** -> ***Existing Item*** as is showed in the following picture.
 
 <img src="ImagesReadme/AddingLibraryExisting.png" >
 
@@ -78,18 +78,18 @@ Then, it will be necessary to add the header in PSoC Creator as well just clicki
 
 ###### Importing the header in main.c
 
-For this step will be necesary to invoque the function with the ***#include "matrix_library.h"*** because it is a local library.
+For this step, it will be necessary to invoke the library with the ***#include "matrix_library.h"*** because it is a local library.
 <img src="ImagesReadme/Include.PNG">
 
 ###### Top Design in PSoC creator
 
-Using ***matrix_library.h*** needs to have on the ***Top Design*** some sort of PSoC componets with specifics names:
+To use ***matrix_library.h*** you must to have on the ***Top Design*** some sort of PSoC componets named as the following names:
 
 >LCD to the LCD module <br/>
 >UART to the Uart Module<br/>
->MATRIX to the Matrix conection <br/>
+>Matrix to the Matrix conection <br/>
 
-It is not necesary to has the all components but be carefull calling whatever of those components with some names listed above. Look at the example, in the following picture, I used only the Uart module to see my output and as a requirement it was named ***UART***.
+It is not necessary to have all components but be careful calling whatever of those components with some names listed above. Look at the example, in the following picture, I used only the Uart module to see my output and as a requirement, it was named ***UART***.
 
 <img src="ImagesReadme/TopDesignComponents.PNG">
 
