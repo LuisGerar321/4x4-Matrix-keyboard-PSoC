@@ -61,11 +61,16 @@ The important file in this repository is ***matrix_library.h*** file which conta
 ###### Download
 To get this library, it will be necessary clonning  the repository or download it in a zip file. Then, seek the header and put it inside of the folder Design.cydsn which is creted when you do a new project whit any name.
 
+
+###### Add to your current  PSoC workspace project
+
 <br/>
 
-<img src="ImagesReadme/HeaderInProject.png" >
+The following image shows the ***matrix_library.h*** stored inside of the PSoC project named ***Design01.cydsn*** created by my workspace called ***GatoGame***.
 
-The previus image shows the ***matrix_library.h*** stored inside of the PSoC project named ***Design01.cydsn*** created by my workspace called ***GatoGame***.
+<br/> <img src="ImagesReadme/HeaderInProject.png" > <br/>
+
+
 
 
 
