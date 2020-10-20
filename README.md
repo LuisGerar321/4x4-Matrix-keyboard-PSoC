@@ -56,19 +56,43 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 
 <br/>
 
-## How to use it
+## How to implement it on your projects
 The important file in this repository is ***matrix_library.h*** file which contains the necesary functions to use the matrix keyboard 4x4. Including the header in your  PSoc project will able to use the functions with. Furthermore, a PSoC project are added in this repository in case you needed it(***name_example***).
 ###### Download
 To get this library, it will be necessary clonning  the repository or download it in a zip file. Then, seek the header and put it inside of the folder Design.cydsn which is creted when you do a new project whit any name.
 
 
-###### Add to your current  PSoC workspace project
+###### Adding ***matrix_library.h***  to your current  PSoC workspace project
 
 <br/>
 
-The following image shows the ***matrix_library.h*** stored inside of the PSoC project named ***Design01.cydsn*** created by my workspace called ***GatoGame***.
+The following image shows how the ***matrix_library.h*** is stored inside of my PSoC project named ***Design01.cydsn*** which was created when the workspace ***GatoGame*** was created in PSoC creator.
 
 <br/> <img src="ImagesReadme/HeaderInProject.png" > <br/>
+
+Then, it will be necessary to add the header in PSoC Creator as well just clicking on ***Header files** -> ***Add** -> ***Existing Item*** as is showed in the following picture.
+
+<img src="ImagesReadme/AddingLibraryExisting.png" >
+
+<img src="ImagesReadme/AddingLibraryExistingExplorer.png">
+
+###### Importing the header in main.c
+
+For this step will be necesary to invoque the function with the ***#include "matrix_library.h"*** because it is a local library.
+<img src="ImagesReadme/Include.PNG">
+
+###### Top Design in PSoC creator
+
+Using ***matrix_library.h*** needs to have on the ***Top Design*** some sort of PSoC componets with specifics names:
+
+>LCD to the LCD module <br/>
+>UART to the Uart Module<br/>
+>MATRIX to the Matrix conection <br/>
+
+It is not necesary to has the all components but be carefull calling whatever of those components with some names listed above. Look at the example, in the following picture, I used only the Uart module to see my output and as a requirement it was named ***UART***.
+
+<img src="ImagesReadme/TopDesignComponents.PNG">
+
 
 
 
