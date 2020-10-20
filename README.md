@@ -26,13 +26,14 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 - **Description**: Use 'keypad_scanUDB' function instead of keypad_scan, if your matrix is connected to UPY Developer Board which have conditioning circuits.
 
 ###### MatrixCheckLoop( component, modo)
-- **Input**: * <br/> >***component***: This is the component option where the output will be printed ("LCD"/"UART")<br/>
-               >***modo***: choose the modality of your physical matrix connection. If it is connected directly to PSoC you will need to use keypad_scan, Nevertheless, if this matrix is connected in a special protoboard like is the protoboard of UPY's Emb engineers you will need to use keypad_scanUDB*
+- **Inputs**:<br/>
+>***component***: This is the component option where the output will be printed ("LCD"/"UART")<br/>
+>***modo***: choose the modality of your physical matrix connection. If it is connected directly to PSoC you will need to use keypad_scan, Nevertheless, if this matrix is connected in a special protoboard like is the protoboard of UPY's Emb engineers you will need to use keypad_scanUDB*
 - **Output**: *This is a loop! it will print in the component choosed ("LCD"/"UART") the key pressed everytime!*
 - **Description**: *Use without interruption just to check the functionality of matricial componet!*
 
 ###### key_scanLine(ENTER, SIZE , MODO)
-- **Input**: <br/>
+- **Inputs**: <br/>
 >***ENTER***: it's the final character of the message <br/>
 >***SIZE***: The maximun size allowed by digit combination <br/>
 >***MODO***: it's the mode of your physical matrix connection <br/>
@@ -49,8 +50,25 @@ Finally, if you have another contributions or ideas for these functions,  you ar
 
 
 ###### Matrix connection to PSoC 
+<br/>
 
 <img src="ImagesReadme/ConnectionsMatrix.png"  witdh = 900, height = 700>
+
 <br/>
+
+## How to use it
+The important file in this repository is ***matrix_library.h*** file which contains the necesary functions to use the matrix keyboard 4x4. Including the header in your  PSoc project will able to use the functions with. Furthermore, a PSoC project are added in this repository in case you needed it(***name_example***).
+###### Download
+To get this library, it will be necessary clonning  the repository or download it in a zip file. Then, seek the header and put it inside of the folder Design.cydsn which is creted when you do a new project whit any name.
+
+<br/>
+
+<img src="ImagesReadme/HeaderInProject.png" >
+
+The previus image shows the ***matrix_library.h*** stored inside of the PSoC project named ***Design01.cydsn*** created by my workspace called ***GatoGame***.
+
+
+
+
 
 
