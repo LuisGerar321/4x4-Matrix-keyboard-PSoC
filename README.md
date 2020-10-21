@@ -9,7 +9,7 @@ This library is a summary function to read a simple Matrix Keyboard 4x4. This al
 
 
 
-So, using the functions that ***matrix_library.h*** provides, you will able to put the focus on your own project which is the important thing. This code is not a professional PSoC library because I wrote that while I was doing a scholar project so. Nevertheles, it is usefull and help me in another PSoC projects.
+So, using the functions that ***matrix_library.h***, you will able to put the focus on your own project which is the important thing. This code is not a professional PSoC library because I wrote that while I was doing a scholar project so. Nevertheles, it is usefull and help me in another PSoC projects.
 Finally, if you have another contributions or ideas for these functions,  you are free to extend that and send me a message to update this repository.
 
 ## Functions
